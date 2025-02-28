@@ -12,19 +12,15 @@ except ImportError or NameError:
 from os import system ; import time as t
 
 chars = [
-'a' , '.-','b','-...',
-'c','-.-.','d','-..',
-'e' , '.','f','..-.',
-'g','--.','h','....',
-'i','..','j','.---',
-'k','-.-','l','.-..',
-'m','--','n','-.',
-'o','---','p','.--.',
-'q','--.-','r','.-.',
-'s','...','t','-',
-'u','..-','v','...-',
-'w','.--','x','-..-',
-'y','-.--','z','--..'
+'a','.-',    'b','-...',    'c','-.-.',    'd','-..',
+'e','.',     'f','..-.',    'g','--.',     'h','....',
+'i','..',    'j','.---',    'k','-.-',     'l','.-..',
+'m','--',    'n','-.',      'o','---',     'p','.--.',
+'q','--.-',  'r','.-.',     's','...',     't','-',
+'u','..-',   'v','...-',    'w','.--',     'x','-..-',
+'y','-.--',  'z','--..',    '1','.----',   '2',"..---",
+'3','...--', '4','....-',   '5','.....',   '6','-....',
+'7','--...', '8','---..',   '9','----.',   '0','-----'
 ]
 
 class convert:
@@ -35,7 +31,7 @@ class convert:
             print(f"\n{cyan}STRING -> {reset}",end="")
             for i in string:
                 result += chars[chars.index(i)-1]  
-            print(green+result)
+            print(green+result.capitalize())
         else:
             string = str(code).split("  ")
             result = ""
@@ -45,19 +41,19 @@ class convert:
                 for i in breakdown:
                     result += chars[chars.index(i)-1]  
                 result += " "
-            print(green+result)
+            print(green+result.capitalize())
 
     def english_to_morse(string):
         if not " " in string:
             result= ""
             print(f"\n{cyan}CODE -> ",end = " ")
-            for i in string:
+            for i in string.lower():
                 result += chars[chars.index(i)+1]+" "
             print(result)
         else:
-            code = str(string).split(" ")
+            code = str(string.lower()).split(" ")
             result = ""
-            print("\n{cyan}CODE -> ",end = " ")
+            print(f"\n{cyan}CODE -> ",end = " ")
             for i in code:
                 for j in i:
                     result += chars[chars.index(j)+1]+" "
