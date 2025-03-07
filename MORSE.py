@@ -71,7 +71,7 @@ def instructions():
     input("\n\n                 press enter...")
     return
 
-
+system('cls')
 while True:
     print("\n\n\n\n\n\n")
     print(f"{cyan}              MORSE CONVERTER : \n")
