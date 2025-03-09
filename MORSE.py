@@ -63,7 +63,7 @@ class convert:
 
 def instructions():
     system('cls')
-    print(white+"1. String should only be numbers or English alphabets.")
+    print(white+"\n\n\n\n\n\n\n1. String should only be numbers or English alphabets.")
     print("2. Morse code letters should also follow the above instruction")
     print("3. While writing morse code, letters are to be seperated using one space.")
     print("4. Words are to be separated using double spaces.")
@@ -75,23 +75,11 @@ system('cls')
 while True:
     print("\n\n\n\n\n\n")
     print(f"{cyan}              MORSE CONVERTER : \n")
-    print(f"{magenta}1. ENG --> MORSE           {red}2. MORSE --> ENGLISH{reset}\n\n                  3. EXIT")
-    print(f"{grey}\n       # press 'i' for instructions")
-    try:
-        choice = str(input(F"\n{green}OPTION [1]  [2]  [3] : {white}"))
-        if ord(choice) > ord('3') and ord(choice) < ord('1'):
-            system('cls')
-            print(F"{red}# RETRY")
-            t.sleep(1)
-            system('cls')
-            continue
-        elif choice.lower() == 'i':
-            instructions()
-            system('cls')
-            continue
-    except ValueError:
-        system('cls')
-        print(F"{red}# RETRY")
+    print(f"{magenta}[1] ENG --> MORSE           {red}[2] MORSE --> ENGLISH{reset}\n\n                  [3] EXIT")
+    print(f"{grey}\n         press [i] for instructions")
+    choice = str(input(F"\n{green}                  OPTION : {white}"))
+    if choice not in ['1','2','3','i']:
+        print(F"{red}\t\t\t# RETRY")
         t.sleep(1)
         system('cls')
         continue
@@ -103,7 +91,7 @@ while True:
             print(reset)
         except ValueError:
             system('cls')
-            print(F"{red}# RETRY")
+            print(F"{red}\t\t\t# RETRY")
             t.sleep(1)
             system('cls')
             continue
@@ -115,10 +103,14 @@ while True:
             print(reset)
         except ValueError:
             system('cls')
-            print(F"{red}# RETRY")
+            print(F"{red}\t\t\t\t# RETRY")
             t.sleep(1)
             system('cls')
             continue
     elif choice == '3':
         break
+    elif choice == 'i':
+        system('cls')
+        instructions()
+        system('cls')
 quit()
