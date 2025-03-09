@@ -65,7 +65,7 @@ def instructions():
     system('cls')
     print(white+"\n\n\n\n\n\n\n1. String should only be numbers or English alphabets.")
     print("2. Morse code letters should also follow the above instruction")
-    print("3. While writing morse code, letters are to be seperated using one space.")
+    print("3. While writing morse code, letters are seperated using one space.")
     print("4. Words are to be separated using double spaces.")
     print("5. English string should not contain any punctuations")
     input("\n\n                 press enter...")
