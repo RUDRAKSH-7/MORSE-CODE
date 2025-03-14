@@ -63,20 +63,20 @@ class convert:
 
 def instructions():
     system('cls')
-    print(white+"\n\n\n\n\n\n\n1. String should only be numbers or English alphabets.")
-    print("2. Morse code letters should also follow the above instruction")
-    print("3. While writing morse code, letters are seperated using one space.")
-    print("4. Words are to be separated using double spaces.")
-    print("5. English string should not contain any punctuations")
+    print(white+"\n\n\n\n\n\n\n1. String should only be numbers or English Letters.")
+    print("2. Morse code should be for numbers and alphabets.")
+    print("3. Morse code letters are seperated using one space.")
+    print("4. Morse code Words are separated using double spaces.")
+    print("5. String should not contain any punctuations.")
     input("\n\n                 press enter...")
     return
 
 system('cls')
 while True:
     print("\n\n\n\n\n\n")
-    print(f"{cyan}              MORSE CONVERTER : \n")
+    print(f"{cyan}                MORSE CONVERTER : \n")
     print(f"{magenta}[1] ENG --> MORSE           {red}[2] MORSE --> ENGLISH{reset}\n\n                  [3] EXIT")
-    print(f"{grey}\n         press [i] for instructions")
+    print(f"{grey}\n             [i] for instructions")
     choice = str(input(F"\n{green}                  OPTION : {white}"))
     if choice not in ['1','2','3','i']:
         print(F"{red}\t\t\t# RETRY")
