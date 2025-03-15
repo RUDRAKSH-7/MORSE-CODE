@@ -61,6 +61,12 @@ class convert:
                 result += " "
             print(result)
 
+def menu():
+    print("\n\n\n\n\n\n")
+    print(f"{cyan}                MORSE CONVERTER : \n")
+    print(f"{magenta}[1] ENG --> MORSE           {red}[2] MORSE --> ENGLISH{reset}\n\n                  [x] EXIT")
+    print(f"{grey}\n             [i] for instructions")
+
 def instructions():
     system('cls')
     print(white+"\n\n\n\n\n\n\n1. String should only be numbers or English Letters.")
@@ -71,14 +77,17 @@ def instructions():
     input("\n\n                 press enter...")
     return
 
+def raise_error():
+    system('cls')
+    print(F"{red}\t\t\t# RETRY")
+    t.sleep(1)
+    system('cls')
+
 system('cls')
 while True:
-    print("\n\n\n\n\n\n")
-    print(f"{cyan}                MORSE CONVERTER : \n")
-    print(f"{magenta}[1] ENG --> MORSE           {red}[2] MORSE --> ENGLISH{reset}\n\n                  [3] EXIT")
-    print(f"{grey}\n             [i] for instructions")
+    menu()
     choice = str(input(F"\n{green}                  OPTION : {white}"))
-    if choice not in ['1','2','3','i']:
+    if choice not in ['1','2','x','i']:
         print(F"{red}\t\t\t# RETRY")
         t.sleep(1)
         system('cls')
@@ -87,13 +96,13 @@ while True:
         system('cls')
         try:
             string = str(input(f"{green}STRING : {white}"))
+            if '.' in string or '-' in string:
+                raise_error()
+                continue
             convert.english_to_morse(string)
             print(reset)
         except ValueError:
-            system('cls')
-            print(F"{red}\t\t\t# RETRY")
-            t.sleep(1)
-            system('cls')
+            raise_error()
             continue
     elif choice == '2':
         system('cls')
@@ -102,12 +111,9 @@ while True:
             convert.morse_to_english(code)
             print(reset)
         except ValueError:
-            system('cls')
-            print(F"{red}\t\t\t\t# RETRY")
-            t.sleep(1)
-            system('cls')
+            raise_error()
             continue
-    elif choice == '3':
+    elif choice == 'x':
         break
     elif choice == 'i':
         system('cls')
